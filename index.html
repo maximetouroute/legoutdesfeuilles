@@ -1,51 +1,161 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My GitHub Page</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>le goût des feuilles — site en construction</title>
+  <meta name="description" content="Le Goût des Feuilles — huile aromatique à la feuille de figuier. Site en construction." />
+  <meta name="theme-color" content="#ffffff" />
+  <!-- FONT: Gopher -->
   <style>
+    @font-face {
+      font-family: 'Gopher';
+      src: url('fonts/Gopher-Regular.woff2') format('woff2'),
+           url('fonts/Gopher-Regular.woff') format('woff');
+      font-style: normal; font-weight: 400; font-display: swap;
+    }
+
+    :root {
+      --bg: #ffffff;
+      --ink: #2b2b2b;
+      --muted: #7a7a7a;
+      --line: #e9e9e9;
+      --container: 1100px;
+      --radius: 14px;
+      --space-1: .5rem;
+      --space-2: .75rem;
+      --space-3: 1rem;
+      --space-4: 1.5rem;
+      --space-5: 2rem;
+      --space-6: 3rem;
+      --space-7: 4rem;
+      --space-8: 6rem;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 2rem;
-      background: #f4f4f9;
-      color: #333;
-      text-align: center;
+      margin: 0; background: var(--bg); color: var(--ink);
+      font-family: 'Gopher', sans-serif;
+      line-height: 1.55;
+      text-align: left; /* tout texte ferré à gauche */
     }
-    header {
-      margin-bottom: 2rem;
+
+    .container { max-width: var(--container); margin: 0 auto; padding: 0 var(--space-3); }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; }
+    .muted { color: var(--muted); }
+
+    header { border-bottom: 1px solid var(--line); padding: var(--space-3) 0; }
+    .brand { display:flex; align-items:center; }
+
+    .hero { padding: var(--space-6) 0 var(--space-5); }
+
+    .intro { padding: 0 0 var(--space-6); }
+    .intro p { max-width: 900px; margin: 0; font-size: 1.25rem; color: var(--muted); }
+
+    .about { padding: 0 0 var(--space-7); }
+    .about-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: var(--space-6); align-items: start; }
+    .about p { font-size: 1.25rem; color: var(--muted); }
+
+    .values { padding: var(--space-5) 0 var(--space-7); }
+    .values h2 { margin: 0 0 var(--space-3); font-weight: 500; font-size: 2rem; color: var(--muted); }
+    .values-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: var(--space-3); }
+    .value-card { display: grid; gap: .5rem; }
+    .value-card h3 { margin: .25rem 0 0; font-size: 1.25rem; font-weight: 500; color: var(--muted); }
+    .value-card p { margin: 0; font-size: 1rem; color: var(--muted); }
+
+    footer { border-top: 1px solid var(--line); padding: var(--space-6) 0 var(--space-7); color: var(--muted); }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr; gap: var(--space-6); }
+    .foot-note { font-size: .9rem; }
+
+    @media (max-width: 1100px) {
+      .values-grid { grid-template-columns: repeat(3, 1fr); }
     }
-    h1 {
-      color: #2c3e50;
-    }
-    a {
-      color: #3498db;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    footer {
-      margin-top: 3rem;
-      font-size: 0.9rem;
-      color: #777;
+    @media (max-width: 760px) {
+      .about-grid { grid-template-columns: 1fr; }
+      .values-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Le gout des feuilles</h1>
-    <p>En construction</p>
+  <header class="container">
+    <div class="brand">
+      <a href="#top">
+        <img src="images/logo.png" alt="Le Goût des Feuilles" style="height:40px;" />
+      </a>
+    </div>
   </header>
 
-  <main>
-    <p>You can edit this file to add your own content.</p>
-    <p>Check out my <a href="https://github.com/your-username">GitHub profile</a>.</p>
+  <main id="top">
+    <section class="hero container">
+      <img src="images/hero-bouteille.jpg" alt="Huile aromatique feuille de figuier – Le Goût des Feuilles" />
+    </section>
+
+    <section class="intro container">
+      <p>
+        Bonjour, notre site est en construction ! Pour plus d’informations sur la marque et nos produits, veuillez consulter notre
+        <a href="https://instagram.com/legoutdesfeuilles" target="_blank" rel="noreferrer">compte Instagram</a>. Vous êtes professionnel et souhaitez référencer nos produits ?
+        Écrivez‑nous à <a href="mailto:contact@legoutdesfeuilles.fr">contact@legoutdesfeuilles.fr</a>.
+      </p>
+    </section>
+
+    <section class="about container" id="histoire">
+      <div class="about-grid">
+        <div>
+          <img src="images/histoire-photo.jpg" alt="Laura et sa mère — cueillette" />
+        </div>
+        <div>
+          <p>Le Goût des Feuilles, c’est avant tout une histoire de famille : celle de ma mère et moi, unies depuis toujours par notre passion pour les cueillettes. Chaque été, munies de nos sécateurs et de nos paniers, nous partions à la découverte de fruits et de plantes aromatiques, différents selon les régions où nous séjournions.</p>
+          <p>Après trente années de récoltes partagées, est né Le Goût des Feuilles. Nous élaborons artisanalement des produits issus de cueillettes raisonnées, dans le respect de la nature et du vivant, en quantités très limitées.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="values container" id="valeurs">
+      <h2>Valeurs</h2>
+      <div class="values-grid">
+        <article class="value-card">
+          <img src="images/valeurs-artisanat.jpg" alt="Artisanat" />
+          <h3>Artisanat</h3>
+          <p>Notre projet s’inscrit dans une démarche de retour à l’essentiel, au fait main et aux savoir‑faire artisanaux.</p>
+        </article>
+        <article class="value-card">
+          <img src="images/valeurs-terroir.jpg" alt="Terroir" />
+          <h3>Terroir</h3>
+          <p>Grâce à la richesse de nos sols et à la diversité des climats, nous tenons à produire localement : nos ingrédients sont sourcés en France.</p>
+        </article>
+        <article class="value-card">
+          <img src="images/valeurs-cueillette.jpg" alt="Cueillette raisonnée" />
+          <h3>Cueillette raisonnée</h3>
+          <p>Nous prélevons avec mesure afin de préserver les ressources naturelles et de respecter les cycles biologiques des plantes.</p>
+        </article>
+        <article class="value-card">
+          <img src="images/valeurs-eco.jpg" alt="Éco‑responsabilité" />
+          <h3>Éco‑responsabilité</h3>
+          <p>Nos emballages sont conçus pour être durables, réutilisables et respectueux de l’environnement.</p>
+        </article>
+        <article class="value-card">
+          <img src="images/valeurs-gourmandise.jpg" alt="Gourmandise" />
+          <h3>Gourmandise</h3>
+          <p>Nos créations invitent à explorer de nouvelles saveurs et à twister le quotidien.</p>
+        </article>
+      </div>
+    </section>
   </main>
 
   <footer>
-    <p>© 2025 Your Name — Powered by GitHub Pages</p>
+    <div class="container footer-grid">
+      <div>
+        <p class="foot-note"><strong>Le Goût des Feuilles</strong><br/>2 rue des Lyonnais<br/>75005 Paris</p>
+      </div>
+      <div>
+        <p class="foot-note"><a href="https://instagram.com/legoutdesfeuilles" target="_blank" rel="noreferrer">@legoutdesfeuilles</a></p>
+        <p class="foot-note">© <span id="year"></span>, Le Goût des Feuilles. All rights reserved.</p>
+      </div>
+    </div>
   </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
